@@ -1,0 +1,26 @@
+{{>partials/header}}
+ 
+<a href='/cadastro'>Adicionar Produtos</a>
+ 
+<table border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>PREÇO</th>
+        <th>AÇÕES</th>
+    </tr>
+ 
+    {{#produtos}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{nome}}</td>
+        <td>R$  {{preco}}</td>
+        <td>
+            <a href='/editar/{{id}}'>Editar</a>
+            <a href='/excluir/{{id}}'onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+        </td>
+    </tr>
+    {{/produtos}}
+</table>
+ 
+{{>partials/footer}}
